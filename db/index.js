@@ -25,10 +25,7 @@ const Link = sequelize.define(
     comment: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    creationDate: {
-      type: DataTypes.DATE,
-      defaultValue: Sequelize.NOW,
+      defaultValue: "",
     },
   },
   {

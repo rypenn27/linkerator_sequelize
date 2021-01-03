@@ -16,6 +16,8 @@ async function buildTables() {
 }
 
 async function populateInitialData() {
+  const { Link, Tag } = models;
+
   try {
     console.log("Testing Sequelize connection");
     try {
@@ -24,6 +26,17 @@ async function populateInitialData() {
     } catch (error) {
       console.error("Unable to connect to the database:", error);
     }
+
+    const link1 = await Link.create({
+      url: "https://google.com",
+      comment: "best search engine",
+    });
+
+    const tag1 = await Tag.create({ tag: "search" });
+    const tag2 = await Tag.create({ tag: "home" });
+
+    await link1.addTag(tag1);
+    await link1.addTag(tag2);
 
     // create useful starting data
   } catch (error) {
