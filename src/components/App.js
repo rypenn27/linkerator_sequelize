@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Header } from "../components";
+import { Header, NewLinkForm, Links } from "../components";
 
 // import {
 //   getSomething
@@ -21,6 +21,8 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+      {/* <Links /> */}
+      <NewLinkForm />
     </div>
   );
 };

@@ -44,6 +44,9 @@ const Tag = sequelize.define(
   },
   {
     // Other model options go here
+    defaultScope: {
+      exclude: ["LinkTags"],
+    },
   }
 );
 
